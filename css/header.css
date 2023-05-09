@@ -1,0 +1,107 @@
+.header{
+    position: relative;
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap:nowrap; */
+    /* 가로로 내용 영역을 배치할 때 justify-content */
+    justify-content: space-around;
+    align-items: flex-start;
+    /* align-items: flex-start; */
+
+    width: 100%;
+    height: 100px;
+
+    overflow: hidden;
+    transition: height 0.3s;
+
+    padding: 0 100px;
+    z-index: 999;
+}
+
+.header::before{
+    content:"";
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+    /* 투명하기 때문에 안보여요 */
+    opacity: 0;
+    transition: opercity 0.5s;
+}
+.header-active{
+    height: 260px !important;
+    box-shadow: 0px 12px 12px -17px rgba(0,0,0,0.25);
+}
+.header-active::before{
+    opacity: 1;
+}
+
+.logo{
+    margin-top: 35px;
+}
+.nav{
+    margin-left: 240px;
+}
+.gnb{
+    /* display:flex 라고 작성을 하면 flex-container */
+    display:flex;
+    /* 가로 여백이 남는 경우 여백처리 */
+    gap: 0 50px;
+    font-family:"Noto Sans KR";
+}
+.gnb > li{
+position: relative;
+}
+.gnb > li > a{
+    display: block;
+    line-height: 100px;
+    font-size: 18px;
+    color:#222;
+    letter-spacing: -0.3px;
+    font-weight:500;
+    white-space: nowrap;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.submenu{
+}
+.submenu li{
+ 
+}
+.submenu li a{
+    display:block;
+    text-align:center;
+    font-size: 14px;
+    line-height: 26px;
+    color:#08151d;
+    font-weight: 400;
+    font-family: "Noto Sans KR";
+    white-space: nowrap;
+}
+.submenu li a:hover{
+    color:#999;
+}
+.side-wrap{
+    padding: 18px;
+    background:#f5f9ff;
+    border-radius:36px;
+    margin-top: 20px;
+}
+.member{
+display: flex;
+
+gap: 0 25px;
+}
+.member li:after{
+    
+}
+.member li a{
+font-size:13px;
+font-weight:500;
+color:#7e7e7e;
+font-family:"Noto Sans KR";
+}
+
+/* header 반응형 */
