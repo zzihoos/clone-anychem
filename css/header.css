@@ -27,8 +27,8 @@
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
   /* 투명하기 때문에 안보여요 */
-  opacity: 0;
-  transition: opacity 0.5s;
+  /* opacity: 0;
+  transition: opacity 0.5s; */
 }
 .header-active {
   height: 260px !important;
@@ -45,6 +45,16 @@
 .nav {
   margin-left: 240px;
   transition: margin 0.5s;
+}
+.nav-blue-bar {
+  display: block;
+  position: absolute;
+  top: 100px;
+  left: 0;
+  width: 0px;
+  height: 1px;
+  background:#0072ff;
+  
 }
 .gnb {
   /* display:flex 라고 작성을 하면 flex-container */
