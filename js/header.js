@@ -56,11 +56,23 @@ window.addEventListener("load", function () {
     // console.log(posX);
   });
 
-  // let a = document.querySelectorAll(".gnb > li");
-  // console.log(a);
-  // a.forEach(function (item) {
-  //   console.log(item);
-  //   console.log(item.getBoundingClientRect().left);
-  //   console.log(item.offsetWidth);
-  // });
+//스크롤에 의한 position:fixed, relative 교체
+const visual = this.document.querySelector(".visual");
+this.window.addEventListener("scroll",function(){
+  //스크롤 위치값을 파악
+  let scY = this.window.scrollY;
+  //classList.add() 와 classList.remove() 활용
+
+  if(scY > 0){
+    //스크롤바가 아래로 조금이라도 이동
+    //position: fixed;
+    header.classList.add("header-fixed");
+    visual.classList.add("visual-fix");
+  }else{
+    //스크롤바가 최상단에 위치.
+    //position: relative;
+    header.classList.remove("header-fixed");
+    visual.classList.remove("header-fix");
+  }
+});
 });

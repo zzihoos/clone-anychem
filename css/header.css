@@ -1,21 +1,25 @@
 .header {
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
-  /* flex-direction: row;
-    flex-wrap:nowrap; */
-  /* 가로로 내용 영역을 배치할 때 justify-content */
-
-  align-items: flex-start;
   justify-content: space-between;
-  /* align-items: flex-start; */
+  align-items: flex-start;
 
   width: 100%;
   height: 100px;
-
+  background: #fff;
   overflow: hidden;
-  transition: height 0.5s, padding 0.5s;
   padding: 0 100px;
-  z-index: 999;
+  transition: height 0.5s, padding 0.5s;
+
+  z-index: 9999;
+}
+.header-fixed {
+  position: fixed !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
 }
 
 .header::before {
@@ -27,8 +31,8 @@
   height: 1px;
   background: rgba(0, 0, 0, 0.1);
   /* 투명하기 때문에 안보여요 */
-  /* opacity: 0;
-  transition: opacity 0.5s; */
+  /* opacity: 0; */
+  /* transition: opacity 0.5s; */
 }
 .header-active {
   height: 260px !important;
@@ -42,24 +46,24 @@
   margin-top: 35px;
   transition: margin 0.3s;
 }
+
 .nav {
   margin-left: 240px;
   transition: margin 0.5s;
 }
+
 .nav-blue-bar {
   display: block;
   position: absolute;
-  top: 100px;
   left: 0;
+  top: 100px;
   width: 0px;
   height: 1px;
-  background:#0072ff;
-  
+  background: #0072ff;
 }
+
 .gnb {
-  /* display:flex 라고 작성을 하면 flex-container */
   display: flex;
-  /* 가로 여백이 남는 경우 여백처리 */
   gap: 0 50px;
   transition: gap 0.5s;
 }
@@ -68,6 +72,7 @@
 .gnb > li > a {
   display: block;
   line-height: 100px;
+
   font-size: 18px;
   color: #222;
   letter-spacing: -0.3px;
@@ -94,26 +99,26 @@
 .submenu li a:hover {
   color: #999;
 }
+
 .side-wrap {
   padding: 18px;
   background: #f5f9ff;
   border-radius: 36px;
   margin-top: 20px;
 }
+
 .member {
   display: flex;
-
-  gap: 0 25px;
+  gap: 0 26px;
 }
-.member li:after {
+.member li {
 }
 .member li a {
   font-size: 13px;
-  font-weight: 500;
   color: #7e7e7e;
+  font-weight: 700;
   font-family: "Noto Sans KR";
 }
-
 /* header 반응형 */
 @media screen and (max-width: 1720px) {
   .nav {
@@ -122,7 +127,7 @@
 }
 @media screen and (max-width: 1560px) {
   .header {
-    padding: 0 50px;
+    padding: 0 70px;
   }
   .gnb {
     gap: 0 30px;
@@ -141,19 +146,23 @@
     margin-left: 0;
   }
 }
+
 @media screen and (max-width: 1080px) {
   .gnb > li > a {
     font-size: 16px;
   }
 }
+
 @media screen and (max-width: 1020px) {
   .gnb {
     gap: 0 20px;
   }
 }
+
 @media screen and (max-width: 1000px) {
   .header {
     height: 75px;
+    padding: 0 20px;
   }
   .logo {
     margin-top: 20px;

@@ -36,7 +36,25 @@ window.addEventListener("load", function (event) {
           el: ".sw-visual-pg",
          clickable:true,
         },
-
+        //위의 구문을 통해서 slide 완료되면
+        // .sw-visual-pg 에는 span.swiper-pagination-bullet 이 생성됨
+        //innerHTML 을 이용해서 내용을 넣어보자.
+    
+          
+      });
+      const swVisualBullets = document.querySelectorAll(
+        ".sw-visual-pg .swiper-pagination-bullet"
+      );
+      swVisualBullets.forEach((item, index, arr) => {
+        if(index < 9){
+          item.innerHTML = `<em>0${index + 1}</em>`;
+        }else{
+          item.innerHTML = `<em>${index + 1}</em>`;
+        }
+        // 삼항연산자 코드
+        // item.innerHTML = `<em>${index < 10 ? "0" :  ""}${index + 1}</em>`
       });
     }
+
+    
   });
