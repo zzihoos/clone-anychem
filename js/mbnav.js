@@ -39,25 +39,24 @@ window.addEventListener("load", function () {
   });
 
   const mbGnb = document.querySelector(".mb-gnb");
-mbGnb.addEventListener("click",function(event){
-  
-  event.stopPropagation();
-});
+  mbGnb.addEventListener("click", function (event) {
+    // 이벤트 전달 막기
+    event.stopPropagation();
+  });
 
-  mbWrap.addEventListener("click",function(event){
-    console.log("event.type:" + event.type);
-    console.log("event.target:" + event.target);
-    console.log("event.currentTarget:" + event.currentTarget);
+  mbWrap.addEventListener("click", function (event) {
+    console.log("event.type : " + event.type);
+    console.log("event.target : " + event.target);
+    console.log("event.currentTarget : " + event.currentTarget);
 
     mbNav.classList.remove(mbNavActive);
     mbWrap.classList.remove(mbWrapActive);
-        // Reset 하겠다.
-        resetSubMenu();
-        // 펼침 기록 변수 초기화
-        sideOpenNumber = undefined;
+    // Reset 하겠다.
+    resetSubMenu();
+    // 펼침 기록 변수 초기화
+    sideOpenNumber = undefined;
   });
-  
-  
+
   // 모바일 아코디언 메뉴
   const sideLis = document.querySelectorAll(".side-menu > li");
   const sideMenuA = document.querySelectorAll(".side-menu > li > a");

@@ -103,7 +103,7 @@
 }
 .side-menu > li {
   height: 53px;
-  overflow:hidden; 
+  overflow: hidden;
 }
 .side-menu > li > a {
   position: relative;
